@@ -16,12 +16,12 @@ def exit1():
     log["text"] = "Status: EXIT_STATUS"
 
 def enter():
-    log['text'] = 'Status: Performing action...'
+    log['text'] = 'Status: Waiting...'
     rootWin.after(2000, enter1)
     log.config( fg= "green")
 
 def exit():
-    log['text'] = 'Status: Performing action...'
+    log['text'] = 'Status: Waiting...'
     rootWin.after(2000, exit1)
     log.config( fg= "red")
 
