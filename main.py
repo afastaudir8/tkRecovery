@@ -10,10 +10,10 @@ rootWin.title('tkRecovery (0x3ff, a fast audi r8)')
 rootWin.geometry('500x175')
 
 def enter1():
-    log["text"] = "Status: ENTER_STATUS"
+    log["text"] = "Status: ENTER_STATUS1"
 
 def exit1():
-    log["text"] = "Status: EXIT_STATUS"
+    log["text"] = "Status: EXIT_STATUS1"
 
 def enter():
     log['text'] = 'Status: Waiting...'
