@@ -27,7 +27,7 @@ Then, install MacPorts for your version of the Mac operating system:
 
 ### libimobiledevice:
 
-Now that you installed MacPorts, you are now able to install libimobile device (what makes the app work). To start off, type `sudo port install libimobiledevice`. This will start the installation of libimobiledevice.
+Now that you installed MacPorts, you are now able to install libimobiledevice (what makes the app enter/exit recovery). To start off, type `sudo port install libimobiledevice`. This will start the installation of libimobiledevice.
 
 ### tkRecovery itself
 
