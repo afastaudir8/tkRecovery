@@ -7,6 +7,9 @@ import platform
 from tkinter import *
 from tkinter import Tk, font
 from tkinter import Menu
+
+oschk = platform.system()
+
 rootWin = Tk()
 font.families()
 
