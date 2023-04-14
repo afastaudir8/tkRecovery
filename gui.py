@@ -2,13 +2,25 @@
 
 import tkinter
 import subprocess
+import platform
 
 from tkinter import *
 from tkinter import Tk, font
 from tkinter import Menu
+
+import time
+
+from scripts import *
+
+
 rootWin = Tk()
 font.families()
 
+
+# checkstatus = 1
+# while checkstatus == 1:
+#     devicestatus = deviceconnected()
+# 
 rootWin.title('tkRecovery (0x3ff, a fast audi r8)')
 rootWin.geometry('500x175')
 
@@ -50,6 +62,10 @@ def openNewWindow():
     iosv = Label(infoWin, text="IOS_VERSION", font=('System', 9))
     iosv.pack()
 
+def updatestatus():
+    log.config(text=f'Status: {deviceconnected()}')
+    rootWin.after(1000, updatestatus)
+
 # tk gui
 label = Label(rootWin, text="tkRecovery", font=('System', 24))
 label.pack()
@@ -57,7 +73,7 @@ desc = Label(rootWin, text="Easy tool to make your iDevice enter/exit recovery."
 desc.pack()
 desc2 = Label(rootWin, text="(Use it when restoring or jailbreaking your iDevice)", font=('System', 10))
 desc2.pack()
-log = Label(rootWin, text="Status: nil", font=('System', 12))
+log = Label(rootWin, text=f"Status: {deviceconnected()}", font=('System', 12))
 log.pack()
 EnterButton = Button(rootWin, text="Enter Recovery", command=enter)
 EnterButton.pack()
@@ -90,4 +106,5 @@ menubar.add_cascade(
     menu=deviceinfo_menu
 )
 
+updatestatus()
 rootWin.mainloop()
