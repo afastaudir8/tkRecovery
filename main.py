@@ -1,14 +1,18 @@
+# made bu 0x3ff and a fast audi r8
+
 import tkinter
 import subprocess
 
 from tkinter import *
 from tkinter import Tk, font
+from tkinter import Menu
 rootWin = Tk()
 font.families()
 
 rootWin.title('tkRecovery (0x3ff, a fast audi r8)')
 rootWin.geometry('500x175')
 
+# tk gui defined items
 def enter1():
     log["text"] = "Status: ENTER_STATUS1"
 
@@ -25,6 +29,28 @@ def exit():
     rootWin.after(2000, exit1)
     log.config( fg= "red")
 
+def openNewWindow():
+    infoWin = Toplevel(rootWin)
+    infoWin.title("iDevice information")
+    infoWin.geometry("250x175")
+    label = Label(infoWin, text="iDevice information", font=('System', 16))
+    label.pack()
+    devicename = Label(infoWin, text="DEVICE_NAME", font=('System', 14))
+    devicename.pack()
+    model = Label(infoWin, text="iPhone model:", font=('System', 12))
+    model.pack()
+    modeln = Label(infoWin, text="MODEL", font=('System', 9))
+    modeln.pack()
+    serial = Label(infoWin, text="Serial Number:", font=('System', 12))
+    serial.pack()
+    serialn = Label(infoWin, text="SERIAL_NUM", font=('System', 9))
+    serialn.pack()
+    ios = Label(infoWin, text="iOS:", font=('System', 12))
+    ios.pack()
+    iosv = Label(infoWin, text="IOS_VERSION", font=('System', 9))
+    iosv.pack()
+
+# tk gui
 label = Label(rootWin, text="tkRecovery", font=('System', 24))
 label.pack()
 desc = Label(rootWin, text="Easy tool to make your iDevice enter/exit recovery.", font=('System', 13))
@@ -37,5 +63,20 @@ EnterButton = Button(rootWin, text="Enter Recovery", command=enter)
 EnterButton.pack()
 ExitButton = Button(rootWin, text="Exit Recovery", command=exit)
 ExitButton.pack()
+
+menubar = Menu(rootWin)
+rootWin.config(menu=menubar)
+
+deviceinfo_menu = Menu(menubar)
+
+deviceinfo_menu.add_command(
+    label='Show iDevice information',
+    command=openNewWindow
+)
+
+menubar.add_cascade(
+    label="Tool",
+    menu=deviceinfo_menu
+)
 
 rootWin.mainloop()
