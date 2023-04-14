@@ -26,10 +26,10 @@ rootWin.geometry('500x175')
 
 # tk gui defined items
 def enter1():
-    log["text"] = "Status: ENTER_STATUS1"
+    log["text"] = "Status: ..."
 
 def exit1():
-    log["text"] = "Status: EXIT_STATUS1"
+    log["text"] = "Status: ..."
 
 def enter():
     log['text'] = 'Status: Waiting...'
