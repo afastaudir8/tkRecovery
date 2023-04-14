@@ -25,20 +25,12 @@ rootWin.title('tkRecovery (0x3ff, a fast audi r8)')
 rootWin.geometry('500x175')
 
 # tk gui defined items
-def enter1():
-    log["text"] = "Status: ..."
-
-def exit1():
-    log["text"] = "Status: ..."
-
 def enter():
     log['text'] = 'Status: Waiting...'
-    rootWin.after(2000, enter1)
     log.config( fg= "green")
 
 def exit():
     log['text'] = 'Status: Waiting...'
-    rootWin.after(2000, exit1)
     log.config( fg= "red")
 
 def openNewWindow():
