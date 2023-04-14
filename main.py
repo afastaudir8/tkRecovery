@@ -64,11 +64,13 @@ EnterButton.pack()
 ExitButton = Button(rootWin, text="Exit Recovery", command=exit)
 ExitButton.pack()
 
-# menus
+# menuconfig
 menubar = Menu(rootWin)
 rootWin.config(menu=menubar)
 deviceinfo_menu = Menu(menubar)
 quit = Menu(menubar)
+
+# menu buttons
 deviceinfo_menu.add_command(
     label='Show iDevice information',
     command=openNewWindow
@@ -77,10 +79,15 @@ quit.add_command(
     label='Quit',
     command=rootWin.destroy
 )
+
+# cascade buttons
+menubar.add_cascade(
+    label="File",
+    menu=quit
+)
 menubar.add_cascade(
     label="Tool",
     menu=deviceinfo_menu
-    menu=quit
 )
 
 rootWin.mainloop()
