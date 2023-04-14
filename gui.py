@@ -8,7 +8,8 @@ from tkinter import *
 from tkinter import Tk, font
 from tkinter import Menu
 
-oschk = platform.system()
+from scripts import *
+
 
 rootWin = Tk()
 font.families()
