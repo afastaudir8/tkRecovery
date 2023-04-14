@@ -2,6 +2,7 @@
 
 import tkinter
 import subprocess
+import platform
 
 from tkinter import *
 from tkinter import Tk, font
