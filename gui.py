@@ -25,21 +25,7 @@ rootWin.title('tkRecovery (0x3ff, a fast audi r8)')
 rootWin.geometry('500x175')
 
 # tk gui defined items
-def enter1():
-    log["text"] = "Status: ENTER_STATUS1"
 
-def exit1():
-    log["text"] = "Status: EXIT_STATUS1"
-
-def enter():
-    log['text'] = 'Status: Waiting...'
-    rootWin.after(2000, enter1)
-    log.config( fg= "green")
-
-def exit():
-    log['text'] = 'Status: Waiting...'
-    rootWin.after(2000, exit1)
-    log.config( fg= "red")
 
 def openNewWindow():
     infoWin = Toplevel(rootWin)
@@ -75,6 +61,7 @@ desc2 = Label(rootWin, text="(Use it when restoring or jailbreaking your iDevice
 desc2.pack()
 log = Label(rootWin, text=f"Status: {deviceconnected()}", font=('System', 12))
 log.pack()
+
 EnterButton = Button(rootWin, text="Enter Recovery", command=enterrecovery)
 EnterButton.pack()
 ExitButton = Button(rootWin, text="Exit Recovery", command=exitrecovery)
@@ -88,6 +75,17 @@ deviceinfo_menu = Menu(menubar)
 deviceinfo_menu.add_command(
     label='Show iDevice information',
     command=openNewWindow
+)
+
+quit.add_command(
+    label='Quit',
+    command=rootWin.destroy
+)
+
+# cascade buttons
+menubar.add_cascade(
+    label="File",
+    menu=quit
 )
 
 menubar.add_cascade(

@@ -3,6 +3,7 @@ import platform
 
 binos = platform.system()
 
+
 def deviceconnected():
     if binos == 'Linux':
         deviceid = subprocess.check_output(["lsusb"])
@@ -27,3 +28,4 @@ def enterrecovery():
 
 def exitrecovery():
     subprocess.call(f"{binos}/irecovery -n", shell=True)
+
