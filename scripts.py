@@ -9,7 +9,7 @@ def deviceconnected():
         deviceid = subprocess.check_output(["lsusb"])
         deviceid = str(deviceid)
     elif binos == 'Darwin':
-        deviceid = subprocess.check_output(["system_profiler", "SPUSBDataType"])
+        deviceid = subprocess.check_output(["system_profiler"])
         deviceid = str(deviceid)
     if "12a8" in deviceid:
         devicestatus = "Device in Normal Mode"
