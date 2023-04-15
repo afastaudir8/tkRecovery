@@ -77,10 +77,6 @@ deviceinfo_menu.add_command(
     command=openNewWindow
 )
 
-quit.add_command(
-    label='Quit',
-    command=rootWin.destroy
-)
 
 # cascade buttons
 menubar.add_cascade(
