@@ -75,9 +75,9 @@ desc2 = Label(rootWin, text="(Use it when restoring or jailbreaking your iDevice
 desc2.pack()
 log = Label(rootWin, text=f"Status: {deviceconnected()}", font=('System', 12))
 log.pack()
-EnterButton = Button(rootWin, text="Enter Recovery", command=enter)
+EnterButton = Button(rootWin, text="Enter Recovery", command=enterrecovery)
 EnterButton.pack()
-ExitButton = Button(rootWin, text="Exit Recovery", command=exit)
+ExitButton = Button(rootWin, text="Exit Recovery", command=exitrecovery)
 ExitButton.pack()
 
 menubar = Menu(rootWin)
