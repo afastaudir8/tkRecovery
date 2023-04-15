@@ -1,1 +1,4 @@
-__pycache__/
+__pycache__
+Darwin/.DS_Store
+.gitignore
+.DS_Store
